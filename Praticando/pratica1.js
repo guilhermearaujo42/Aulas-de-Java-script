@@ -26,6 +26,8 @@ do {
         case 3:
             let valorTotal = Number(estadia.split(";"))//valorQuarto;valorTotal;qtdDias
             let valorTotal = aux[1];
+            let fpag = formaPagamento();
+            valorTotal = valorTotal + (valorTotal * fpag);
             break;
         case 0:
             alert("Saindo do sistema!");
@@ -37,12 +39,14 @@ do {
 function cadastrarHospede (){
     let nome = prompt(" digite nome do hospede: ");
     let telefone = String(prompt("digite telefone do hospede: "));
+    let cpf;
     do{
-        let cpf = String(prompt("digite CPF do hospede: "));
+        cpf = String(prompt("digite CPF do hospede: "));
 
     } while (!(validarCPF(cpf)));
+    let idade;
     do{
-        let idade = prompt("digite idade do hospede: ");
+        idade = prompt("digite idade do hospede: ");
 
     } while(!(validarMaiorIdade(idade)));
 }
@@ -66,9 +70,8 @@ function cadastrarEstadia(){
 }
 function isCasal(){
     let valor;
-    let tipoQuarto;
     do {
-        tipoQuarto = prompt("Digite o tipo de quarto: "+
+        let tipoQuarto = prompt("Digite o tipo de quarto: "+
         "1) Solteiro;"+
         "2) Casal."
     );
@@ -83,14 +86,13 @@ function isCasal(){
                 alert("Opção invalida!")
                 break;
             }
-    } while(tipoQuarto !== 1 && tipoQuarto !== 2);
+    } while(tipoQuarto !== 1 || tipoQuarto !== 2);
     return valor;
 }
 function tipoDia(){
     let valor;
-    let qDia;
     do {
-        qDia = prompt("Escolhar o tipo do dia: "+
+        let qDia = prompt("Escolhar o tipo do dia: "+
         "1) fim de semana;"+
         "2) dia util."
     );
@@ -105,7 +107,7 @@ function tipoDia(){
                 alert("Opção invalida!")
                 break;
             }
-    } while(qDia !== 1 && qDia !== 2);
+    } while(qDia !== 1 || qDia !== 2);
     return valor;
 }
 function valorEstadia(){
@@ -116,9 +118,8 @@ function valorEstadia(){
     }
 }
 function formaPagamento (){
-    let op;
     do{
-        op = prompt("Escolhar a forma de pagamento: "+
+        let op = prompt("Escolhar a forma de pagamento: "+
             "1) Debito, pix ou dinheiro; "+
             "2) Credito.");
             switch (op){
@@ -132,6 +133,6 @@ function formaPagamento (){
                     alert("Opção invalida!");
                     break
             }
-    }while(((op != "1") && op != "2"));
+    }while(op != "1" && op != "2");
     return acrec;
 }
