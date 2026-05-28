@@ -19,6 +19,12 @@ do {
         case 1:
             let hospede = cadastrarHospede();
             alert(hospede);
+            let nome = (hospede.split(";"))[0];
+            let idade = (hospede.split(";"))[0]
+            let cpf = (hospede.split(";"))[0]
+            alert(`nome: ${nome}`);
+            alert(`idade: ${idade}`);
+            alert(`cpf: ${cpf}`);
             break;
         case 2:
             let estadia = cadastrarEstadia()
