@@ -10,10 +10,10 @@
 let op;
 do {
     op = prompt("Escolhar uma das seguintes opções: "+
-        "1) Cadastrar hospede;"+
-        "2) Escolhar estadia;"+
-        "3) Calcular conta;"+
-        "0) Sair."
+        "\n1) Cadastrar hospede;"+
+        "\n2) Escolhar estadia;"+
+        "\n3) Calcular conta;"+
+        "\n0) Sair."
     );
     switch (op){
         case 1:
@@ -66,8 +66,9 @@ function cadastrarEstadia(){
 }
 function isCasal(){
     let valor;
+    let tipoQuarto;
     do {
-        let tipoQuarto = prompt("Digite o tipo de quarto: "+
+        tipoQuarto = prompt("Digite o tipo de quarto: "+
         "1) Solteiro;"+
         "2) Casal."
     );
@@ -82,13 +83,14 @@ function isCasal(){
                 alert("Opção invalida!")
                 break;
             }
-    } while(tipoQuarto !== 1 || tipoQuarto !== 2);
+    } while(tipoQuarto !== 1 && tipoQuarto !== 2);
     return valor;
 }
 function tipoDia(){
     let valor;
+    let qDia;
     do {
-        let qDia = prompt("Escolhar o tipo do dia: "+
+        qDia = prompt("Escolhar o tipo do dia: "+
         "1) fim de semana;"+
         "2) dia util."
     );
@@ -103,7 +105,7 @@ function tipoDia(){
                 alert("Opção invalida!")
                 break;
             }
-    } while(qDia !== 1 || qDia !== 2);
+    } while(qDia !== 1 && qDia !== 2);
     return valor;
 }
 function valorEstadia(){
@@ -113,4 +115,23 @@ function valorEstadia(){
         else return dia * 124;
     }
 }
-function 
+function formaPagamento (){
+    let op;
+    do{
+        op = prompt("Escolhar a forma de pagamento: "+
+            "1) Debito, pix ou dinheiro; "+
+            "2) Credito.");
+            switch (op){
+                case "1":
+                    acrec = -0.05;
+                    break;
+                case "2":
+                    acrec = 0.1;
+                    break;
+                default:
+                    alert("Opção invalida!");
+                    break
+            }
+    }while(((op != "1") && op != "2"));
+    return acrec;
+}
