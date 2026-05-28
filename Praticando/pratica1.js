@@ -78,8 +78,8 @@ function isCasal(){
     let valor;
     do {
         let tipoQuarto = prompt("Digite o tipo de quarto: "+
-        "1) Solteiro;"+
-        "2) Casal."
+        "\nm1) Solteiro;"+
+        "\n2) Casal."
     );
         switch(tipoQuarto){
             case 1:
@@ -92,7 +92,7 @@ function isCasal(){
                 alert("Opção invalida!")
                 break;
             }
-    } while(tipoQuarto !== 1 || tipoQuarto !== 2);
+    } while(tipoQuarto !== 1 && tipoQuarto !== 2);
     return valor;
 }
 function tipoDia(){
@@ -113,7 +113,7 @@ function tipoDia(){
                 alert("Opção invalida!")
                 break;
             }
-    } while(qDia !== 1 || qDia !== 2);
+    } while(qDia !== 1 && qDia !== 2);
     return valor;
 }
 function valorEstadia(){
