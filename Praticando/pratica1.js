@@ -7,8 +7,9 @@
 // hospede = nome, telefone, cpf e idade (maior);
 // escolher o tipo do quarto (casal ou solteiro), fim de semana ou dia utel e forma de pagamento
 // menu repete
+let op;
 do {
-    let op = prompt("Escolhar uma das seguintes opções: "+
+    op = prompt("Escolhar uma das seguintes opções: "+
         "1) Cadastrar hospede;"+
         "2) Escolhar estadia;"+
         "3) Calcular conta;"+
