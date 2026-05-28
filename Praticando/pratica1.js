@@ -18,7 +18,7 @@ do {
     switch (op){
         case 1:
             let hospede = cadastrarHospede();
-            cpf
+            alert(hospede);
             break;
         case 2:
             let estadia = cadastrarEstadia()
